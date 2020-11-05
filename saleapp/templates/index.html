@@ -6,12 +6,12 @@
     <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet"/>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body class="bg-cyan">
+<body>
     <h1 class="text-center">Day la trang chu</h1>
     <ul>
-        <li><a href="#">Tat ca</a></li>
+        <li><a href="{{ url_for('product_list') }}">Tat ca</a></li>
         {% for item in categories%}
-            <li><a href="#"> {{item.name}}</a></li>
+            <li><a href="{{ url_for('product_list', category_id=item.id) }}"> {{item.name}}</a></li>
         {% endfor %}
     </ul>
 </body>

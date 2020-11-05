@@ -24,7 +24,9 @@
                         <img alt="{{ item.name }}" width="120" src="{{ url_for('static', filename=item.image)}}">
                     </td>
                     <td>{{item.id}}</td>
-                    <td>{{item.name}}</td>
+                    <td>
+                        <a href="{{ url_for('product_detail', product_id=item.id) }}" >{{item.name}}</a>
+                    </td>
                     <td>{{ "{:,.1f}".format(item.price) }}</td>
                 </tr>
             {% endfor %}
